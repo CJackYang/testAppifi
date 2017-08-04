@@ -1,0 +1,21 @@
+{
+  "name": "testappifi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec 'electron .'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bluebird": "^3.5.0",
+    "chalk": "^2.0.1",
+    "electron-prebuilt": "^1.4.13",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "superagent": "^3.5.2"
+  }
+}
