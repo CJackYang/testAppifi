@@ -3,12 +3,19 @@
   <head>
     <meta charset="UTF-8"> 
     <title>Hello World!</title>
+    <style>
+      #abc {
+        margin: 100px 100px;
+      }
+    </style>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
   </head>
   <body id="content">
       <!-- IP:<input type="text" id="textIp" value="jmnkhjk"><br/> -->
       <!-- IP: <input type="text" id="textIp"><br/> -->
-      <p>IP: <input type="text" id="textIp"></p>
-      <button onclick="submitClick(document.getElementById('textIp').value)">确定</button>
+      <p>stationIP: <input type="text" id="stationIP"></p>
+      <p>cloudIP: <input type="text" id="cloudIP"></p>
+      <button onclick="submitClick(document.getElementById('stationIP').value, document.getElementById('cloudIP').value)">确定</button>
     <script src="js/index.js"></script>
   </body>
 </html>
