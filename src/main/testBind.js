@@ -20,7 +20,7 @@ class TestBind {
 
   }
 
-  async createFirstUserAsync(username, isAdmin) 　{
+  async createFirstUserAsync(username, isAdmin) {
     let props = { username, password: username }
     if(isAdmin)　props.isAdmin = true
     console.log('开始创建 First User')
@@ -31,6 +31,7 @@ class TestBind {
     }catch(e){
       console.log('创建用户失败')
       console.log(e.message)
+      return e
     }
   }
 

@@ -1,4 +1,6 @@
 const { ipcMain } = require('electron')
+
+const testBind = require('./testBind')
 let chalk = require('chalk')
 
 ipcMain.on('setIp',　(event, stationIP, cloudIP) => {
