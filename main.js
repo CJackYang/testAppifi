@@ -2,7 +2,7 @@ require('babel-register')
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 const url = require('url')
-const dispatch = require('./src/main/dispatch')
+const dispatch = require('./src/main/lib/dispatch')
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
@@ -10,7 +10,8 @@ let win
 
 function createWindow () {
   // 创建浏览器窗口。
-  win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({width: 800, height: 600}) 
+  global.mainWindow = win
 
   // 加载应用的 index.html。
   win.loadURL(url.format({

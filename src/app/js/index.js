@@ -30,9 +30,15 @@ let WxLogin = (a) => {
 let startTest = () => {
   ipc.send('startTest')
   document.getElementById('content').innerHTML = '<h1>正在测试</h1>'
-
-  document.getElementById('content').innerHTML = '<div id="wechat_bind_container"></div>'
 }
+
+ipc.on('logMessage', (event, message) => {
+  let body = document.getElementById('content')
+  if(body){
+    body.innerHTML = body.innerHTML + `<br/><p>${ message }</p>`
+  }
+})
+
 
 ipc.on('getWechatCode', () => {
   document.getElementById('content').innerHTML = '<div id="wechat_bind_container"></div>'
