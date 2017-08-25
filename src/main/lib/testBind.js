@@ -14,10 +14,11 @@ class TestBind {
   }
 
   async run() {
-    // let user = await this.createFirstUserAsync('Alice', true)
-    // let token = await this.getTokenAsync(user.uuid, 'Alice').token
-    // console.log(user, token)
-    await startAppifiAsync(require('../testData/testData').test1)
+    let user = await this.createFirstUserAsync('Alice', true)
+    let token = await this.getTokenAsync(user.uuid, 'Alice').token
+    console.log(user, token)
+    
+    // await startAppifiAsync(require('../testData/testData').test1)
   }
 
   async resetStation() {
@@ -47,13 +48,15 @@ class TestBind {
   }
 
   getToken(useruuid, password,callback) {
-    console.log('开始获取 token')
+    this.sendMessage('开始获取 token')
     let url = this.stationIP + '/token'
     request
       .get(url)
       .auth(useruuid, password)
       .end((err, res) => {
+        this.sendMessage('token 获取成功')
         if(err) return callback(err)
+        this.sendMessage(res.body)
         callback(null, res.body)
       })
   }
